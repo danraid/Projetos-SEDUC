@@ -1,0 +1,23 @@
+@startuml
+start
+
+:Cliente 1 envia e-mail ou WhatsApp da requisição;
+:Analista de Lotação GELOT analisa a demanda;
+
+if (Analista de Lotação GELOT sabe responder?) then (Sim)
+    :Analista de Lotação GELOT decide resposta (POSITIVA ou NEGATIVA);
+else (Não)
+    :Analista de Lotação GELOT repassa a demanda para o Processo GELOT;
+    :Analista de Processo GELOT analisa e decide resposta (POSITIVA ou NEGATIVA);
+endif
+
+if (Resposta POSITIVA?) then (Sim)
+    :Analista de Lotação GELOT executa a demanda;
+else (Não)
+    :Analista de Lotação GELOT não executa a demanda;
+endif
+
+stop
+@enduml
+
+
