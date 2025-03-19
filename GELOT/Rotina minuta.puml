@@ -1,0 +1,28 @@
+@startuml
+
+!define RECTANGLE #DDDDFF
+
+skinparam arrowColor Navy
+skinparam actorBorderColor Black
+skinparam entityBorderColor Black
+skinparam entityBackgroundColor LightBlue
+skinparam rectangleBackgroundColor DarkBlue
+skinparam rectangleBorderColor Black
+skinparam rectangleFontColor White
+
+rectangle "Análise de Relatório" as AR #DarkBlue {
+    "1. Organizar por Nome"
+    "2. Organizar por Município"
+    "3. Verificar conflito (Início x Fim)"
+    "4. Separar em categorias (tipo de minuta)"
+    "5. Revisão com pares"
+}
+
+rectangle "SIGEAM" as SIGEAM #DarkBlue
+rectangle "Mala Direta" as MD #DarkBlue
+
+AR -[#Navy]-> SIGEAM : RelMINUT\nAberto YT
+SIGEAM -[#Navy]-> MD : RelMINUT\nFechado YT
+SIGEAM -[#Navy]-> AR : Fechar
+
+@enduml
